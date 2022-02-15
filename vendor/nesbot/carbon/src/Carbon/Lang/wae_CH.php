@@ -9,10 +9,11 @@
  * file that was distributed with this source code.
  */
 
-/**
+/*
  * Authors:
  * - Walser Translation Team ml@translate-wae.ch
- */return array_replace_recursive(require __DIR__.'/en.php', [
+ */
+return array_replace_recursive(require __DIR__.'/en.php', [
     'formats' => [
         'L' => 'YYYY-MM-DD',
     ],

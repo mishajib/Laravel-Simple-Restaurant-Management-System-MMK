@@ -16,8 +16,8 @@ class UsersTableSeeder extends Seeder
         //insert default value into users table
         DB::table('users')->insert([
             'name' => 'Super Admin',
-            'email' => 'mishajib222@gmail.com',
-            'password' => bcrypt('i am back'),
+            'email' => 'admin@app.com',
+            'password' => bcrypt('password'),
         ]);
     }
 }

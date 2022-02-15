@@ -45,10 +45,9 @@ class SliderController extends Controller
             'image' => 'required|mimes:png,jpeg,jpg,bmp,gif',
         ]);
 
-        $image = $request->file('image');
-        $slug = Str::slug($request->title);
-
-        if (isset($image)){
+        if ($request->hasFile('image')){
+            $image = $request->file('image');
+            $slug = Str::slug($request->title);
             $currentDate = Carbon::now()->toDateString();
             $imagename = $slug .'-'. $currentDate .'-'. uniqid() .'.'. $image->getClientOriginalExtension();
 
@@ -106,18 +105,18 @@ class SliderController extends Controller
             'image' => 'image|mimes:png,jpeg,jpg,bmp,gif',
         ]);
 
-        $image = $request->file('image');
-        $slug = Str::slug($request->title);
         $slider = Slider::find($id);
 
-        if (isset($image)){
+        if ($request->hasFile('image')){
+            $image = $request->file('image');
+            $slug = Str::slug($request->title);
             $currentDate = Carbon::now()->toDateString();
             $imagename = $slug .'-'. $currentDate .'-'. uniqid() .'.'. $image->getClientOriginalExtension();
 
             if (!file_exists('uploads/slider')){
                 mkdir('uploads/slider', 0777, true);
             }
-            if (fileExists('uploads/slider/'.$slider->image)){
+            if (file_exists('uploads/slider/'.$slider->image)){
                 unlink('uploads/slider/'.$slider->image);
             }
 
@@ -145,8 +144,8 @@ class SliderController extends Controller
 
         if (file_exists('uploads/slider/'.$slider->image)){
             unlink('uploads/slider/'.$slider->image);
-            $slider->delete();
         }
+        $slider->delete();
         return back()->with('successMsg', 'Slider Successfully Deleted');
     }
 }

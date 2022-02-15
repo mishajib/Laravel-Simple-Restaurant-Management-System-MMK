@@ -414,6 +414,22 @@
         })
     </script>
 @endif
+
+@if(session('errorMsg'))
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+
+        Toast.fire({
+            type: 'error',
+            title: '{{ session('errorMsg') }}'
+        })
+    </script>
+@endif
 <script>
     $(function () {
         $('#datetimepicker1').datetimepicker({

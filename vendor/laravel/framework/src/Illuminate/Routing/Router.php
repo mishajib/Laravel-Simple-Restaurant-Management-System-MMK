@@ -122,7 +122,7 @@ class Router implements RegistrarContract, BindingRegistrar
      * Create a new Router instance.
      *
      * @param  \Illuminate\Contracts\Events\Dispatcher  $events
-     * @param  \Illuminate\Container\Container  $container
+     * @param  \Illuminate\Container\Container|null  $container
      * @return void
      */
     public function __construct(Dispatcher $events, Container $container = null)
@@ -1011,7 +1011,7 @@ class Router implements RegistrarContract, BindingRegistrar
      * Get a route parameter for the current route.
      *
      * @param  string  $key
-     * @param  string  $default
+     * @param  string|null  $default
      * @return mixed
      */
     public function input($key, $default = null)
@@ -1154,10 +1154,10 @@ class Router implements RegistrarContract, BindingRegistrar
         $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 
         // Registration Routes...
-//        if ($options['register'] ?? true) {
-//            $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-//            $this->post('register', 'Auth\RegisterController@register');
-//        }
+        if ($options['register'] ?? true) {
+            $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+            $this->post('register', 'Auth\RegisterController@register');
+        }
 
         // Password Reset Routes...
         if ($options['reset'] ?? true) {

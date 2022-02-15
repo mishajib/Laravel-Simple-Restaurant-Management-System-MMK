@@ -9,10 +9,11 @@
  * file that was distributed with this source code.
  */
 
-/**
+/*
  * Authors:
  * - szl_PL locale Przemyslaw Buczkowski libc-alpha@sourceware.org
- */return array_replace_recursive(require __DIR__.'/en.php', [
+ */
+return array_replace_recursive(require __DIR__.'/en.php', [
     'formats' => [
         'L' => 'DD.MM.YYYY',
     ],
@@ -32,9 +33,9 @@
     'm' => ':count mjeśůnc',
     'a_month' => ':count mjeśůnc',
 
-    'week' => ':count Tydźyń',
-    'w' => ':count Tydźyń',
-    'a_week' => ':count Tydźyń',
+    'week' => ':count tydźyń',
+    'w' => ':count tydźyń',
+    'a_week' => ':count tydźyń',
 
     'day' => ':count dźyń',
     'd' => ':count dźyń',
@@ -44,11 +45,11 @@
     'h' => ':count godzina',
     'a_hour' => ':count godzina',
 
-    'minute' => ':count Minuta',
-    'min' => ':count Minuta',
-    'a_minute' => ':count Minuta',
+    'minute' => ':count minuta',
+    'min' => ':count minuta',
+    'a_minute' => ':count minuta',
 
-    'second' => ':count Sekůnda',
-    's' => ':count Sekůnda',
-    'a_second' => ':count Sekůnda',
+    'second' => ':count sekůnda',
+    's' => ':count sekůnda',
+    'a_second' => ':count sekůnda',
 ]);
