@@ -65,3 +65,8 @@
 <h1 align="center">
 ** Thank you **
 </h1>
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/mishajib/simple-restaurant-reservation-management-mmk/blob/master/LICENSE)
+
+Copyright © 2024 [M.I SHAJIB](https://github.com/mishajib). <br />
+This project is [MIT](https://github.com/mishajib/simple-restaurant-reservation-management-mmk/blob/master/LICENSE) licensed.
