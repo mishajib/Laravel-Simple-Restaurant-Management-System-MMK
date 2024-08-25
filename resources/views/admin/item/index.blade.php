@@ -46,7 +46,9 @@
                                             </td>
                                             <td>{{ $item->category->name }}</td>
                                             <td>{{ $item->description }}</td>
-                                            <td>{{ $item->price }}</td>
+                                            <td>
+                                                {{ '£ ' . $item->price }}
+                                            </td>
                                             <td>{{ $item->created_at }}</td>
                                             <td>{{ $item->updated_at }}</td>
                                             <td>

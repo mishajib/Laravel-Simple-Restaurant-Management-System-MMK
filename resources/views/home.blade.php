@@ -165,7 +165,7 @@
                                     </div>
                                 </a>
 
-                                <h2 class="white">${{ $item->price }}</h2>
+                                <h2 class="white">{{ '£' . number_format($item->price, 2) }}</h2>
                             </li>
                         @endforeach
                     </ul>
